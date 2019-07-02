@@ -53,13 +53,13 @@ public class AlimentoServlet extends HttpServlet {
 
 				  int codigo = Integer.parseInt(request.getParameter("codigo"));
 				  String tipo = request.getParameter("tipo");
-			      String descrição = request.getParameter("descrição");
+			      String descricao = request.getParameter("descrição");
 			      int calorias = Integer.parseInt(request.getParameter("calorias"));
 			      SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 			      Calendar data = Calendar.getInstance();
 			      data.setTime(format.parse(request.getParameter("data")));
 			      
-			      Alimentacao alimentacao = new Alimentacao(codigo, descrição, calorias, data, tipo); 
+			      Alimentacao alimentacao = new Alimentacao(codigo, descricao, calorias, data, tipo); 
 			      dao.atualizar(alimentacao);
 			      
 			      request.setAttribute("msg", "Alimento atualizado!");
